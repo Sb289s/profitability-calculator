@@ -18,11 +18,12 @@ function calculate() {
   // Profit per trade
   document.getElementById("profitPerTrade").innerText = `$${profitPerTrade.toFixed(2)}`;
 
-  // Conditional styling for loss
+  // Conditional styling for average loss (flipped logic)
   const lossPerTradeEl = document.getElementById("lossPerTrade");
   lossPerTradeEl.innerText = `-$${lossPerTrade.toFixed(2)}`;
   lossPerTradeEl.classList.remove("red", "blue");
-  if (lossPerTrade > 0) {
+
+  if (lossPerTrade < 0) {
     lossPerTradeEl.classList.add("red");
   } else {
     lossPerTradeEl.classList.add("blue");
@@ -37,6 +38,7 @@ function calculate() {
   const netProfitEl = document.getElementById("netProfit");
   netProfitEl.innerText = `$${netProfit.toFixed(0)}`;
   netProfitEl.classList.remove("positive", "negative");
+
   if (netProfit >= 0) {
     netProfitEl.classList.add("positive");
   } else {
