@@ -15,9 +15,13 @@ function calculate() {
   const totalLoss = lossPerTrade * losses;
   const netProfit = totalProfit - totalLoss;
 
-  // Set outputs
+  // Outputs
   document.getElementById("profitPerTrade").innerText = `$${profitPerTrade.toFixed(2)}`;
-  document.getElementById("lossPerTrade").innerText = `-$${lossPerTrade.toFixed(2)}`;
+
+  const lossPerTradeEl = document.getElementById("lossPerTrade");
+  lossPerTradeEl.innerText = `-$${lossPerTrade.toFixed(2)}`;
+  lossPerTradeEl.classList.add("calculated");
+
   document.getElementById("wins").innerText = wins.toFixed(0);
   document.getElementById("losses").innerText = losses.toFixed(0);
   document.getElementById("totalProfit").innerText = `$${totalProfit.toFixed(0)}`;
