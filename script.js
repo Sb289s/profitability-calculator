@@ -15,16 +15,14 @@ function calculate() {
   const totalLoss = lossPerTrade * losses;
   const netProfit = totalProfit - totalLoss;
 
-  // Profit per trade
+  // Update values
   document.getElementById("profitPerTrade").innerText = `$${profitPerTrade.toFixed(2)}`;
 
-  // Average loss per trade: make red after calculate
   const lossPerTradeEl = document.getElementById("lossPerTrade");
   lossPerTradeEl.innerText = `-$${lossPerTrade.toFixed(2)}`;
   lossPerTradeEl.classList.remove("red");
   lossPerTradeEl.classList.add("red");
 
-  // Other outputs
   document.getElementById("wins").innerText = wins.toFixed(0);
   document.getElementById("losses").innerText = losses.toFixed(0);
   document.getElementById("totalProfit").innerText = `$${totalProfit.toFixed(0)}`;
@@ -38,4 +36,8 @@ function calculate() {
   } else {
     netProfitEl.classList.add("negative");
   }
+
+  // ROI %
+  const roi = (netProfit / accountSize) * 100;
+  document.getElementById("roi").innerText = `${roi.toFixed(2)}%`;
 }
