@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profitability Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Profitability Calculator <span class="logo">&thejuice.</span></h1>
+
+    <div class="calculator">
+      <div class="inputs">
+        <h2>Your Numbers</h2>
+        <label>Risk (%)
+          <input type="number" id="risk" min="0.1" max="100" step="0.1" value="1">
+        </label>
+
+        <label>Account Size ($)
+          <input type="number" id="accountSize" value="10000">
+        </label>
+
+        <label>Win Rate (%)
+          <input type="number" id="winRate" min="1" max="100" step="1" value="30">
+        </label>
+
+        <label>Reward / Risk Ratio
+          <input type="number" id="rrRatio" value="3">
+        </label>
+
+        <button onclick="calculate()">Calculate</button>
+      </div>
+
+      <div class="outputs">
+        <h2>Output</h2>
+        <div class="output-line"><span>Average profit per trade:</span> <span id="profitPerTrade">$0</span></div>
+        <div class="output-line"><span>Number of winning trades:</span> <span id="wins">0</span></div>
+        <div class="output-line"><span>Total profit over 100 trades:</span> <span id="totalProfit">$0</span></div>
+        <div class="output-line"><span>Average loss per trade:</span> <span id="lossPerTrade">$0</span></div>
+        <div class="output-line"><span>Losing trades per 100:</span> <span id="losses">0</span></div>
+        <div class="output-line"><span>Net profit over 100 trades:</span> <span id="netProfit">$0</span></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
