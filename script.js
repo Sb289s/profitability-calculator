@@ -18,10 +18,11 @@ function calculate() {
   // Profit per trade
   document.getElementById("profitPerTrade").innerText = `$${profitPerTrade.toFixed(2)}`;
 
-  // Turn red AFTER calculate is clicked
+  // Average loss per trade: make red after calculate
   const lossPerTradeEl = document.getElementById("lossPerTrade");
   lossPerTradeEl.innerText = `-$${lossPerTrade.toFixed(2)}`;
-  lossPerTradeEl.classList.add("active-red");
+  lossPerTradeEl.classList.remove("red");
+  lossPerTradeEl.classList.add("red");
 
   // Other outputs
   document.getElementById("wins").innerText = wins.toFixed(0);
