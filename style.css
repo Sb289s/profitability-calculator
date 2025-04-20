@@ -85,7 +85,7 @@ button {
   margin-top: 2rem;
 }
 
-/* Blue default output */
+/* Output spacing and layout */
 .output-line {
   display: flex;
   justify-content: space-between;
@@ -99,20 +99,33 @@ button {
 }
 
 .output-line span:last-child {
-  color: #00aaff;
   font-weight: bold;
+}
+
+/* Blue default output */
+.output-line span:last-child {
+  color: #00aaff;
 }
 
 /* Conditional colors for net profit */
 #netProfit.positive {
-  color: #00ff88; /* Green */
+  color: #00ff88;
 }
 
 #netProfit.negative {
-  color: #ff4d4d; /* Red */
+  color: #ff4d4d;
 }
 
-/* ✅ Responsive adjustments */
+/* Conditional colors for average loss */
+#lossPerTrade.red {
+  color: #ff4d4d;
+}
+
+#lossPerTrade.blue {
+  color: #00aaff;
+}
+
+/* Responsive adjustments */
 @media (min-width: 700px) {
   .inputs, .outputs {
     flex: 1;
