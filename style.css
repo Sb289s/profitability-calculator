@@ -100,10 +100,6 @@ button {
 
 .output-line span:last-child {
   font-weight: bold;
-}
-
-/* Blue default output */
-.output-line span:last-child {
   color: #00aaff;
 }
 
@@ -117,12 +113,16 @@ button {
 }
 
 /* Conditional colors for average loss */
+#lossPerTrade {
+  font-weight: bold;
+}
+
 #lossPerTrade.red {
-  color: #ff4d4d;
+  color: #ff4d4d !important;
 }
 
 #lossPerTrade.blue {
-  color: #00aaff;
+  color: #00aaff !important;
 }
 
 /* Responsive adjustments */
