@@ -99,29 +99,20 @@ button {
 
 .output-line span:last-child {
   font-weight: bold;
+  color: #00aaff; /* default blue */
 }
 
-/* Default: blue for all */
-#profitPerTrade,
-#lossPerTrade,
-#wins,
-#losses,
-#totalProfit,
-#netProfit {
-  color: #00aaff;
-}
-
-/* Turns red AFTER calculate */
-#lossPerTrade.red {
-  color: #ff4d4d !important;
-}
-
-/* Net profit conditional */
+/* Net profit dynamic color */
 #netProfit.positive {
   color: #00ff88 !important;
 }
 
 #netProfit.negative {
+  color: #ff4d4d !important;
+}
+
+/* Loss trade only turns red AFTER calculate */
+#lossPerTrade.active-red {
   color: #ff4d4d !important;
 }
 
