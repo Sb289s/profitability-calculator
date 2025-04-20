@@ -85,6 +85,7 @@ button {
   margin-top: 2rem;
 }
 
+/* Output styling */
 .output-line {
   display: flex;
   justify-content: space-between;
@@ -99,15 +100,10 @@ button {
 
 .output-line span:last-child {
   font-weight: bold;
-  color: #00aaff;
+  color: #00aaff; /* default blue for all */
 }
 
-/* 🔴 Always red for average loss */
-#lossPerTrade {
-  color: #ff4d4d !important;
-}
-
-/* ✅ Conditional colors for net profit */
+/* Net profit conditional */
 #netProfit.positive {
   color: #00ff88;
 }
@@ -116,7 +112,12 @@ button {
   color: #ff4d4d;
 }
 
-/* Responsive adjustments */
+/* Loss output turns red after calculate */
+#lossPerTrade.calculated {
+  color: #ff4d4d !important;
+}
+
+/* Responsive */
 @media (min-width: 700px) {
   .inputs, .outputs {
     flex: 1;
