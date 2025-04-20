@@ -15,26 +15,13 @@ function calculate() {
   const totalLoss = lossPerTrade * losses;
   const netProfit = totalProfit - totalLoss;
 
-  // Profit per trade
+  // Set outputs
   document.getElementById("profitPerTrade").innerText = `$${profitPerTrade.toFixed(2)}`;
-
-  // Conditional styling for average loss (flipped logic)
-  const lossPerTradeEl = document.getElementById("lossPerTrade");
-  lossPerTradeEl.innerText = `-$${lossPerTrade.toFixed(2)}`;
-  lossPerTradeEl.classList.remove("red", "blue");
-
-  if (lossPerTrade < 0) {
-    lossPerTradeEl.classList.add("red");
-  } else {
-    lossPerTradeEl.classList.add("blue");
-  }
-
-  // Other outputs
+  document.getElementById("lossPerTrade").innerText = `-$${lossPerTrade.toFixed(2)}`;
   document.getElementById("wins").innerText = wins.toFixed(0);
   document.getElementById("losses").innerText = losses.toFixed(0);
   document.getElementById("totalProfit").innerText = `$${totalProfit.toFixed(0)}`;
 
-  // Conditional styling for net profit
   const netProfitEl = document.getElementById("netProfit");
   netProfitEl.innerText = `$${netProfit.toFixed(0)}`;
   netProfitEl.classList.remove("positive", "negative");
